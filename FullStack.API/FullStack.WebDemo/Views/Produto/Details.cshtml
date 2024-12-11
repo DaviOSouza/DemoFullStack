@@ -1,0 +1,36 @@
+﻿@model FullStack.WebDemo.Models.Produto
+
+@{
+    ViewData["Title"] = "Detalhes";
+}
+
+<div class="container mt-4">
+    <h1 class="mb-4">@ViewData["Title"]</h1>
+    <h4 class="text-dark mb-4">Produto</h4>
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <dl class="row">
+                <dt class="col-sm-2 text-start fw-bold">ID</dt>
+                <dd class="col-sm-10">@Html.DisplayFor(model => model.Id)</dd>
+
+                <dt class="col-sm-2 text-start fw-bold">Nome</dt>
+                <dd class="col-sm-10">@Html.DisplayFor(model => model.Nome)</dd>
+
+                <dt class="col-sm-2 text-start fw-bold">Descrição</dt>
+                <dd class="col-sm-10">@Html.DisplayFor(model => model.Descricao)</dd>
+
+                <dt class="col-sm-2 text-start fw-bold">Quantidade</dt>
+                <dd class="col-sm-10">@Html.DisplayFor(model => model.Quantidade)</dd>
+
+                <dt class="col-sm-2 text-start fw-bold">Preço</dt>
+                <dd class="col-sm-10">R$ @Model.Preco.ToString("F2")</dd>
+            </dl>
+        </div>
+    </div>
+
+    <div class="mt-4 d-flex justify-content-between">
+        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Editar</a>
+        <a asp-action="Index" class="btn btn-secondary">Voltar à Lista</a>
+    </div>
+</div>
+

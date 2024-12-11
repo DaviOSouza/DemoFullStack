@@ -1,0 +1,28 @@
+﻿@model FullStack.WebDemo.Models.Categoria
+
+@{
+    ViewData["Title"] = "Deletar";
+}
+
+<div class="container mt-4">
+    <h1 class="mb-4">@ViewData["Title"]</h1>
+    <h4 class="text-dark mb-4">Você tem certeza que gostaria de deletar esta categoria?</h4>
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <dl class="row">
+                <dt class="col-sm-2 text-start fw-bold">ID</dt>
+                <dd class="col-sm-10">@Html.DisplayFor(model => model.Id)</dd>
+
+                <dt class="col-sm-2 text-start fw-bold">Nome</dt>
+                <dd class="col-sm-10">@Html.DisplayFor(model => model.Nome)</dd>
+            </dl>
+        </div>
+    </div>
+
+    <div class="mt-4 d-flex justify-content-between">
+        <form asp-action="Delete" method="post" class="d-inline">
+            <input type="submit" value="Deletar" class="btn btn-danger" />
+        </form>
+        <a asp-action="Index" class="btn btn-secondary">Voltar à Lista</a>
+    </div>
+</div>

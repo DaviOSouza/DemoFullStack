@@ -25,9 +25,9 @@ namespace FullStack.API.Controllers
 
         // GET api/<CategoriaController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public Categoria Get(int id)
         {
-            return "value";
+            return _repository.ObterPorId(id);
         }
 
         // POST api/<CategoriaController>

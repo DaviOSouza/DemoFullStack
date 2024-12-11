@@ -12,7 +12,12 @@
 
         public int Quantidade { get; set; }
 
+        public int CodigoCategoria { get; set; }
 
-       
+        public string NomeCategoria { get; set; }
+
+
+
+
     }
 }

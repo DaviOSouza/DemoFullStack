@@ -39,7 +39,7 @@ namespace FullStack.API.Repository
         {
             using (var connection = new SqlConnection(_connectionString))
             {
-                connection.Execute("UPDATE Categoria SET Nome = @Nome" +
+                connection.Execute("UPDATE Categoria SET Nome = @Nome " +
                     "WHERE Id = @Id", categoria);
             }
         }
