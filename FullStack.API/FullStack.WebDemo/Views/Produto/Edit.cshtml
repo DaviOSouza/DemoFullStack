@@ -24,14 +24,11 @@
                 <span asp-validation-for="Nome" class="text-danger"></span>
             </div>
 
-           
-
-             <div class="form-group">
-                @Html.LabelFor(model => model.NomeCategoria, "Categoria")
-                @Html.DropDownList("CodigoCategoria", (SelectList)ViewBag.Categorias, "Selecione uma Categoria", new { @class = "form-control" }) 
-                @Html.ValidationMessageFor(model => model.CodigoCategoria)
-
-                </div>
+            <div class="form-group">
+                <label asp-for="CodigoCategoria" class="control-label">Categoria</label>
+                <select asp-for="CodigoCategoria" class="form-control" asp-items="ViewBag.Categorias"></select> 
+                <span asp-validation-for="CodigoCategoria" class="text-danger"></span>
+            </div>
 
             <div class="form-group">
                 <label asp-for="Descricao" class="control-label"></label>

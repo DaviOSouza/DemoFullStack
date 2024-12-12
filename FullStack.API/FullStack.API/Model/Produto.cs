@@ -1,4 +1,6 @@
-﻿namespace FullStack.API.Model
+﻿using Dapper.Contrib.Extensions;
+
+namespace FullStack.API.Model
 {
     public class Produto
     {
@@ -14,7 +16,8 @@
 
         public int CodigoCategoria { get; set; }
 
-        public string NomeCategoria { get; set; }
+        [Write(false)]
+        public string? NomeCategoria { get; set; }
 
 
 

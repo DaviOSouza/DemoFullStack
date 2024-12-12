@@ -13,6 +13,6 @@
 
         public int CodigoCategoria { get; set; }
 
-        public string NomeCategoria  { get; set; }
+        public string? NomeCategoria  { get; set; }
     }
 }

@@ -30,14 +30,14 @@ namespace FullStack.WebDemo.Controllers
         // GET: ProdutoController/Create
         public ActionResult Create()
         {
-            ObterCategorias();
+            ObterCategorias(0);
             return View();
         }
 
-        private void ObterCategorias()
+        private void ObterCategorias(int currentCat)
         {
             var categorias = _apiService.GetAsync<List<Categoria>>("categoria").GetAwaiter().GetResult();
-            ViewBag.Categorias = new SelectList(categorias, "Id", "Nome");
+            ViewBag.Categorias = new SelectList(categorias, "Id", "Nome", currentCat);
         }
 
         // POST: ProdutoController/Create
@@ -61,8 +61,8 @@ namespace FullStack.WebDemo.Controllers
         {
             try
             {
-                 ObterCategorias();
-                 var p1 = await _apiService.GetAsync<Produto>($"product/{id}");
+                var p1 = await _apiService.GetAsync<Produto>($"product/{id}");
+                ObterCategorias(p1.CodigoCategoria);                
                 return View(p1);
             }
 
