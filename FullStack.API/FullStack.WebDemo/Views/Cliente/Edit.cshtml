@@ -1,4 +1,4 @@
-﻿@model FullStack.WebDemo.Models.Categoria
+﻿@model FullStack.WebDemo.Models.Cliente
 
 @{
     ViewData["Title"] = "Editar";
@@ -6,7 +6,7 @@
 
 <h1>Editar</h1>
 
-<h4>Atualize as informações da categoria</h4>
+<h4>Atualize as informações do cliente</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -22,6 +22,18 @@
                 <label asp-for="Nome" class="control-label"></label>
                 <input asp-for="Nome" class="form-control" />
                 <span asp-validation-for="Nome" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Telefone" class="control-label"></label>
+                <input asp-for="Telefone" class="form-control" />
+                <span asp-validation-for="Telefone" class="text-danger"></span>
             </div>
 
             <div class="d-flex justify-content-between mt-3">

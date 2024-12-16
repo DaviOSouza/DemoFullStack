@@ -1,0 +1,32 @@
+﻿@model FullStack.WebDemo.Models.Cliente
+
+@{
+    ViewData["Title"] = "Detalhes";
+}
+
+<div class="container mt-4">
+    <h1 class="mb-4">@ViewData["Title"]</h1>
+    <h4 class="text-dark mb-4">Cliente</h4>
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <dl class="row">
+                <dt class="col-sm-2 text-start fw-bold">ID</dt>
+                <dd class="col-sm-10">@Html.DisplayFor(model => model.Id)</dd>
+
+                <dt class="col-sm-2 text-start fw-bold">Nome</dt>
+                <dd class="col-sm-10">@Html.DisplayFor(model => model.Nome)</dd>
+
+                <dt class="col-sm-2 text-start fw-bold">Email</dt>
+                <dd class="col-sm-10">@Html.DisplayFor(model => model.Email)</dd>
+
+                <dt class="col-sm-2 text-start fw-bold">Telefone</dt>
+                <dd class="col-sm-10">@Html.DisplayFor(model => model.Telefone)</dd>
+            </dl>
+        </div>
+    </div>
+
+    <div class="mt-4 d-flex justify-content-between">
+        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Editar</a>
+        <a asp-action="Index" class="btn btn-secondary">Voltar à Lista</a>
+    </div>
+</div>
