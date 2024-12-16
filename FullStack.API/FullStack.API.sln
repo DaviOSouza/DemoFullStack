@@ -9,7 +9,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FullStack.Tests", "FullStac
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FullStack.WebDemo", "FullStack.WebDemo\FullStack.WebDemo.csproj", "{0EE2FE23-398B-400C-BCEE-33EB424E5522}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FullStack.Cargas", "FullStack.Cargas\FullStack.Cargas.csproj", "{D24A18FF-FC38-47B4-AAC0-43BDDED74CC5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FullStack.Cargas", "FullStack.Cargas\FullStack.Cargas.csproj", "{D24A18FF-FC38-47B4-AAC0-43BDDED74CC5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQLs", "SQLs", "{01076A7A-CD55-4FA7-BFBF-14C7D318D250}"
+	ProjectSection(SolutionItems) = preProject
+		Categoria.sql = Categoria.sql
+		Produto.sql = Produto.sql
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
