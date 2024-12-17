@@ -8,6 +8,7 @@ trigger:
 
 pool:
   vmImage: 'windows-latest'
+  demands: 'DaviNote'
 
 variables:
   solution: '**/FullStack.API.csproj'
