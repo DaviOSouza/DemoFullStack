@@ -7,8 +7,9 @@ trigger:
 - main
 
 pool:
-  vmImage: 'windows-latest'
-  demands: 'DaviNote'
+  name: 'DaviNote'
+  demands:  
+  - Agent.Name -equals NOTEDAVI
 
 variables:
   solution: '**/FullStack.API.csproj'
