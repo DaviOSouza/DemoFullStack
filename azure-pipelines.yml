@@ -31,11 +31,11 @@ steps:
     configuration: '$(buildConfiguration)'
     
     
-- task: AzureWebApp@1
+- task: AzureWebApp@1  
   inputs:
     azureSubscription: 'Azure for Students(455d2c50-7b5b-4f0a-ac03-05812944e317)'
     appType: 'webApp'
     appName: 'FullStackDemoBackEnd'
-    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    package: '$(build.artifactStagingDirectory)/WebApp.zip'
     appSettings: '-dbConection "Server=tcp:dbfullstackdemo.database.windows.net,1433;Initial Catalog=dbdemo;Persist Security Info=False;User ID=davisouza;Password=Davi.O.S;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"'
     deploymentMethod: 'auto'
