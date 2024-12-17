@@ -40,6 +40,11 @@ namespace FullStack.WebDemo.Controllers
         {
             try
             {
+                if (!ModelState.IsValid)
+                {
+                    ViewBag.Error = "Dados inválidos";
+                    return View();
+                }
                 await _apiService.PostAsync<Cliente>("cliente/", c);
                 return RedirectToAction(nameof(Index));
             }

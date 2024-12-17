@@ -1,5 +1,7 @@
 using FullStack.WebDemo.Services;
 
+//System.Globalization.CultureInfo.DefaultThreadCurrentCulture = new System.Globalization.CultureInfo("pt-BR");
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
