@@ -37,9 +37,25 @@ namespace FullStack.Cargas
             //throw new NotImplementedException();
         }
 
-        internal static void CargaCliente()
+        public static void CargaCliente()
         {
-            //throw new NotImplementedException();
+            var Lista = File.ReadAllLines(@"d:\temp\clientes.csv");
+            int contador = 0;
+            foreach (var line in Lista)
+            {
+                //if (contador == 0) continue;
+                var colunas = line.Split(";");
+                var cliente = new Cliente()
+                {
+                    Id = 0,
+                    Nome = colunas[1],
+                    Email = colunas[2],
+                    Telefone = colunas[3],
+                };
+                Helper.SalvarCliente(cliente);
+                Console.WriteLine("Executando linha " + contador.ToString());
+                contador++;
+            }
         }
     }
 }

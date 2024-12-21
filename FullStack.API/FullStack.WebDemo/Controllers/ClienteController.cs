@@ -14,9 +14,18 @@ namespace FullStack.WebDemo.Controllers
             _apiService = apiService;
         }
         // GET: ClienteController
-        public async Task<ActionResult> Index()
+
+
+        public async Task<ActionResult> Index(int pageSize = 10, int pageNumber = 1, string nome = null)
         {
-            var lista = await _apiService.GetAsync<List<Cliente>>("cliente");
+            var lista = await _apiService.GetAsyncByPage<List<Cliente>>("cliente/getbypage", pageSize, pageNumber, nome);
+
+            ViewBag.PageSize = pageSize;
+            ViewBag.PageNumber = pageNumber;
+            ViewBag.Nome = nome;
+            ViewBag.TotalPages = lista.FirstOrDefault()?.TotalPages;
+            ViewBag.TotalRecords = lista.FirstOrDefault()?.TotalRecords;
+
             return View(lista);
         }
 

@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 public class FullStackContext: DbContext { 
     public DbSet<Produto> Produto { get; set; }
+    public DbSet<Cliente> Cliente { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {

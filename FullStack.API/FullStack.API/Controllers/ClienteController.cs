@@ -23,6 +23,13 @@ namespace FullStack.API.Controllers
             return _repository.ObterTodos();
         }
 
+        [Route("GetByPage")]
+        [HttpGet()]
+        public IEnumerable<Cliente> GetByPage(int pageSize, int pageNumber, string nome = null)
+        {
+            return _repository.ObterPaginados(pageSize, pageNumber,nome);
+        }
+
         [HttpGet("{id}")]
         public Cliente Get(int id)
         {

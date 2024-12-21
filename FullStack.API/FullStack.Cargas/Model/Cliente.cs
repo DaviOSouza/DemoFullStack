@@ -1,4 +1,10 @@
-﻿namespace FullStack.API.Model
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace FullStack.Cargas.Model
 {
     public class Cliente
     {
@@ -8,8 +14,5 @@
         public string Email { get; set; }
 
         public string Telefone { get; set; }
-
-        public int TotalPages { get; set; }
-        public int TotalRecords { get; set; }
     }
 }

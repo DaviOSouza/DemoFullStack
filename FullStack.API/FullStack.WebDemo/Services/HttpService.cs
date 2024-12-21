@@ -27,6 +27,19 @@
             return JsonConvert.DeserializeObject<T>(responseBody);
         }
 
+        public async Task<T> GetAsyncByPage<T>(string url, int pageSize, int pageNumber, string nome = null)
+        {
+            string query = $"{url}?pageSize={pageSize}&pageNumber={pageNumber}";
+            if (nome != null)
+                query += $"&nome={nome}";
+
+            HttpResponseMessage response = await _httpClient.GetAsync(query);
+            response.EnsureSuccessStatusCode();
+
+            string responseBody = await response.Content.ReadAsStringAsync();
+            return JsonConvert.DeserializeObject<T>(responseBody);
+        }
+
         public async Task PostAsync<TRequest>(string url, TRequest data)
         {
             string jsonData = JsonConvert.SerializeObject(data);

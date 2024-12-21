@@ -2,6 +2,8 @@
 using Dapper;
 using System.Collections.Generic;
 using FullStack.API.Model;
+using System.Data.Common;
+using System.Data;
 
 namespace FullStack.API.Repository
 {
@@ -20,6 +22,19 @@ namespace FullStack.API.Repository
                 return connection.Query<Cliente>("SELECT c.Id, c.Nome, c.Email, c.Telefone FROM Cliente c");
             }
         }
+
+        public IEnumerable<Cliente> ObterPaginados(int pageSize, int pageNumber, string nome = null)
+        {
+            // Parameters for the stored procedure
+            var parameters = new { Nome = nome, PageNumber = pageNumber , PageSize = pageSize };
+
+
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                return connection.Query<Cliente>("ListarClientesPaginado", parameters, commandType: CommandType.StoredProcedure);
+            }
+        }
+
         public Cliente ObterPorId(int id)
         {
             using (var connection = new SqlConnection(_connectionString))

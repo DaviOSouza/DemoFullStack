@@ -17,6 +17,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQLs", "SQLs", "{01076A7A-C
 		Produto.sql = Produto.sql
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Auxiliares", "Auxiliares", "{D5FAE9AF-BD47-4432-9589-21ACFBA82265}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,6 +44,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5FC50B04-5A01-4637-B07A-FE4A41F0EA85} = {D5FAE9AF-BD47-4432-9589-21ACFBA82265}
+		{D24A18FF-FC38-47B4-AAC0-43BDDED74CC5} = {D5FAE9AF-BD47-4432-9589-21ACFBA82265}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9A7F189C-E4B9-4A6A-9F67-2AF950DC3895}

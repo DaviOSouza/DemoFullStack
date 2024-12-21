@@ -17,5 +17,14 @@ namespace FullStack.Cargas
                 db.SaveChanges();
             }
         }
+
+        public static void SalvarCliente(Cliente c)
+        {
+            using (var db = new FullStackContext())
+            {
+                db.Cliente.Add(c);
+                db.SaveChanges();
+            }
+        }
     }
 }
