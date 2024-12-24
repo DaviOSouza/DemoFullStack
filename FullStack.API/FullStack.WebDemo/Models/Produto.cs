@@ -14,5 +14,8 @@
         public int CodigoCategoria { get; set; }
 
         public string? NomeCategoria  { get; set; }
+
+        public int TotalPages { get; set; }
+        public int TotalRecords { get; set; }
     }
 }

@@ -19,8 +19,8 @@ namespace FullStack.API.Model
         [Write(false)]
         public string? NomeCategoria { get; set; }
 
-
-
+        public int TotalPages { get; set; }
+        public int TotalRecords { get; set; }
 
     }
 }

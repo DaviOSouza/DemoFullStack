@@ -13,9 +13,15 @@ namespace FullStack.WebDemo.Controllers
             _apiService = apiService;
         }
         // GET: CategoriaController
-        public async Task<ActionResult> Index()
+        public async Task<ActionResult> Index(int pageSize = 10, int pageNumber = 1, string nome = null)
         {
-            var lista = await _apiService.GetAsync<List<Categoria>>("categoria");
+            var lista = await _apiService.GetAsyncByPage<List<Categoria>>("categoria/getbypage", pageSize, pageNumber, nome);
+
+            ViewBag.PageSize = pageSize;
+            ViewBag.PageNumber = pageNumber;
+            ViewBag.Nome = nome;
+            ViewBag.TotalPages = lista.FirstOrDefault()?.TotalPages;
+            ViewBag.TotalRecords = lista.FirstOrDefault()?.TotalRecords;
             return View(lista);
         }
 

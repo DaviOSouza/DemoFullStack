@@ -11,7 +11,7 @@ namespace FullStack.Cargas
     {
         public static void CargaProdutos ()
         {
-            var Lista = File.ReadAllLines(@"d:\temp\produtos.csv");
+            var Lista = File.ReadAllLines(@"d:\temp\produtos2.csv");
             int contador = 0;
             foreach (var line in Lista)
             {
@@ -21,10 +21,10 @@ namespace FullStack.Cargas
                 {
                     Id = 0,
                     Nome = colunas[1],
-                    CodigoCategoria = Convert.ToInt32(colunas[2]),
+                    CodigoCategoria = 1, //Convert.ToInt32(colunas[2]),
                     Preco = Convert.ToDecimal(colunas[3]),
-                    Quantidade = Convert.ToInt32(colunas[4]),
-                    Descricao = colunas[5]
+                    Quantidade = 1 //Convert.ToInt32(colunas[4]),
+                    //Descricao = colunas[5]
                 };
                 Helper.SalvarProduto(produto);
                 Console.WriteLine("Executando linha " + contador.ToString());
