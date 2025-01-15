@@ -1,27 +1,21 @@
 # DemoFullStack
 
-Documentação do Projeto
-Descrição Geral
 Este projeto é um site completo com camadas de front-end e back-end, desenvolvido em C#. Ele utiliza tecnologias modernas para fornecer uma solução robusta e escalável.
 
-Front-End
+# Front-End
 Tecnologias Utilizadas
 ASP.NET MVC: Utilizado para criar a interface do usuário com Razor Pages, oferecendo uma experiência web interativa e responsiva.
 
 Bootstrap: Framework CSS que facilita o desenvolvimento de uma interface de usuário responsiva e moderna.
 
-jQuery: Biblioteca JavaScript para manipulação de DOM e AJAX, melhorando a interatividade do site.
-
-HTML5 & CSS3: Para a estruturação e estilização do conteúdo web.
-
-Funcionalidades
+# Funcionalidades
 Interface do Usuário Intuitiva: Páginas web bem estruturadas e fáceis de navegar.
 
 Formulários de Entrada: Formulários para entrada de dados com validação do lado do cliente.
 
 Design Responsivo: Layout que se ajusta a diferentes tamanhos de tela para uma experiência consistente em dispositivos móveis e desktop.
 
-Back-End
+# Back-End
 Tecnologias Utilizadas
 ASP.NET Core: Framework para construção de aplicações web e APIs robustas e de alta performance.
 
