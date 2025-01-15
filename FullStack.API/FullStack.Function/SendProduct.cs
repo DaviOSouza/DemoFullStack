@@ -3,6 +3,7 @@ using FullStack.Function.Model;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.Functions.Worker;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 
@@ -11,16 +12,18 @@ namespace FullStack.Function
     public class SendProduct
     {
         private readonly ILogger<SendProduct> _logger;
+        private readonly IConfiguration _config;
 
-        public SendProduct(ILogger<SendProduct> logger)
+        public SendProduct(ILogger<SendProduct> logger, IConfiguration configuration)
         {
             _logger = logger;
+            _config = configuration;
         }
 
         [Function("SendProduct")]
         public async Task<IActionResult> Run([HttpTrigger(AuthorizationLevel.Function, "post")] HttpRequest req)
         {
-            var helper = new ServiceBusHelper("Endpoint=sb://fullstackdemosb.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=yFCqMcbIcpc7ipYuF16UhAC8YpBMPgEzm+ASbPskO1Y=",
+            var helper = new ServiceBusHelper(_config["sbConection"],
                 "produtos");
             try
             {
